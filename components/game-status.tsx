@@ -10,7 +10,7 @@ interface GameStatusProps {
 
 export function GameStatus({ status, winner, currentPlayer }: GameStatusProps) {
   return (
-    <div className="text-2xl font-bold text-center mb-8">
+    <div className="sm:text-2xl text-lg font-bold text-center mb-5">
       {status === 'won' && (
         <p className="text-primary">Player {winner} wins!</p>
       )}

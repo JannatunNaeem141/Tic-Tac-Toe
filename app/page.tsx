@@ -83,7 +83,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-svh bg-background flex flex-col items-center justify-center p-4">
+    <div className="sm:min-h-svh bg-background flex flex-col items-center justify-center p-4 sm:pt-4 pt-8">
       <h1 className="sm:text-4xl text-3xl font-bold mb-8">Tic Tac Toe</h1>
 
       <GameModeSelector
