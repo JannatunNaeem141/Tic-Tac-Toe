@@ -1,14 +1,19 @@
-'use client';
+"use client";
 
-import { useState, useCallback, useEffect } from 'react';
-import { GameBoard } from '@/components/game-board';
-import { GameStatus } from '@/components/game-status';
-import { GameModeSelector } from '@/components/game-mode-selector';
-import { Button } from '@/components/ui/button';
-import { Player, BoardState, GameMode, Difficulty } from '@/lib/types';
-import { checkWinner, checkGameStatus, WINNING_COMBINATIONS } from '@/lib/game-logic';
-import { getComputerMove } from '@/lib/computer-player';
-import { RefreshCw } from 'lucide-react';
+import { useState, useCallback, useEffect } from "react";
+import { GameBoard } from "@/components/game-board";
+import { GameStatus } from "@/components/game-status";
+import { GameModeSelector } from "@/components/game-mode-selector";
+import { Button } from "@/components/ui/button";
+import { Player, BoardState, GameMode, Difficulty } from "@/lib/types";
+import {
+  checkWinner,
+  checkGameStatus,
+  WINNING_COMBINATIONS,
+} from "@/lib/game-logic";
+import { getComputerMove } from "@/lib/computer-player";
+import { RefreshCw } from "lucide-react";
+import { triggerWinCelebration } from "@/lib/celebration";
 
 export default function Home() {
   const [board, setBoard] = useState<BoardState>(Array(9).fill(null));
@@ -30,6 +35,7 @@ export default function Home() {
           newBoard[combo[2]] === winner
         ) {
           setWinningCombo(combo);
+          triggerWinCelebration();
           break;
         }
       }
@@ -92,7 +98,7 @@ export default function Home() {
         selectedMode={gameMode}
         selectedDifficulty={difficulty}
       />
-      
+
       <GameStatus
         status={status}
         winner={winner}
@@ -107,7 +113,7 @@ export default function Home() {
 
       <Button
         onClick={resetGame}
-        className="mt-8 flex items-center gap-2"
+        className="mt-8 flex items-center gap-2 active:scale-95 transition-all duration-300"
         variant="outline"
       >
         <RefreshCw className="h-4 w-4" />
