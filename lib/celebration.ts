@@ -1,7 +1,7 @@
 import confetti from 'canvas-confetti';
 
 export const triggerWinCelebration = () => {
-  const duration = 3 * 1000;
+  const duration = 1000;
   const end = Date.now() + duration;
 
   const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF'];
