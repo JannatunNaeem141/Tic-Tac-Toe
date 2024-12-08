@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 interface BoardCellProps {
   value: string | null;
@@ -13,10 +13,10 @@ export function BoardCell({ value, onClick, isWinningCell }: BoardCellProps) {
     <button
       onClick={onClick}
       className={cn(
-        'h-24 w-24 border-2 border-primary text-4xl font-bold transition-colors',
-        'hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
-        isWinningCell && 'bg-primary/20',
-        !value && 'cursor-pointer'
+        "sm:size-24 size-16 border-2 border-primary text-4xl font-bold transition-colors",
+        "hover:bg-primary/5 focus:outline-none",
+        isWinningCell && "bg-primary/20",
+        !value && "cursor-pointer"
       )}
       disabled={!!value}
     >
