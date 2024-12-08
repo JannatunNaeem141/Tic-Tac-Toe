@@ -1,6 +1,6 @@
 'use client';
 
-import { Player, GameStatus } from '@/lib/types';
+import type { GameStatus, Player } from '@/lib/types';
 
 interface GameStatusProps {
   status: GameStatus;
@@ -18,7 +18,7 @@ export function GameStatus({ status, winner, currentPlayer }: GameStatusProps) {
         <p className="text-primary">Game ended in a draw!</p>
       )}
       {status === 'playing' && (
-        <p>Player {currentPlayer}'s turn</p>
+        <p>Player {currentPlayer}&apos;s turn</p>
       )}
     </div>
   );
