@@ -32,7 +32,7 @@ Follow these steps to get the project running locally:
    npm run dev
 ```
 
-4. **Access the App Locally**  
+4. **Access it Locally**  
    Open your browser and navigate to:  
    [http://localhost:3000](http://localhost:3000)
 
@@ -51,4 +51,4 @@ This project was built with:
 3. If all squares are filled and no player has aligned three symbols, the game ends in a draw.
 
 ## 🌟 Contributing 
-I welcome contributions! If you have suggestions for improvements, feel free to fork the repo and create a pull request, or open an issue to report bugs or request features.
+I always welcome contributions! If you have suggestions for improvements, feel free to fork the repo and create a pull request, or open an issue to report bugs or request features.
